@@ -1,7 +1,7 @@
 extends Node2D
 
 var x_speed = 4.0
-var y_speed = 2.0
+var y_speed = 0.5
 var angle = 90 - rad_to_deg(atan(y_speed/x_speed))
 var x_limit = 640
 var bulletimage

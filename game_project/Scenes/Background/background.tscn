@@ -1,17 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://c743nwkxutise"]
+[gd_scene load_steps=4 format=3 uid="uid://c743nwkxutise"]
 
 [ext_resource type="Texture2D" uid="uid://cto8k1kvcx14a" path="res://Assets/BGleft.png" id="1_y5cwm"]
 [ext_resource type="Texture2D" uid="uid://k3d2qd58ocbr" path="res://Assets/BGright.png" id="2_h3hff"]
+[ext_resource type="Texture2D" uid="uid://cpnuq22kaiy8f" path="res://Assets/wide_background.png" id="3_roiuq"]
 
 [node name="background" type="Node2D"]
 
 [node name="leftimage" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 texture = ExtResource("1_y5cwm")
 centered = false
 
 [node name="rightimage" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 texture = ExtResource("2_h3hff")
 centered = false
 offset = Vector2(640, 0)
+
+[node name="WideBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("3_roiuq")
