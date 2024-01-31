@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx4i8lhawjpdb"]
+
+[ext_resource type="PackedScene" uid="uid://c743nwkxutise" path="res://Scenes/Background/background.tscn" id="1_a5t60"]
+[ext_resource type="PackedScene" uid="uid://bonm7ikbwwv0e" path="res://Scenes/cannon_room/cannon_room.tscn" id="2_py5js"]
+
+[node name="game" type="Node2D"]
+
+[node name="background" parent="." instance=ExtResource("1_a5t60")]
+
+[node name="cannon_room" parent="." instance=ExtResource("2_py5js")]
+position = Vector2(86, 631)

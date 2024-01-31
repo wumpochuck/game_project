@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bonm7ikbwwv0e"]
+
+[ext_resource type="Texture2D" uid="uid://d4kfkrka4ntud" path="res://Assets/cannonroom.png" id="1_k36lv"]
+[ext_resource type="PackedScene" uid="uid://dyiw07lb3av6y" path="res://Scenes/Cannon1/cannon_1.tscn" id="2_heaki"]
+
+[node name="cannon_room" type="Node2D"]
+
+[node name="image" type="Sprite2D" parent="."]
+texture = ExtResource("1_k36lv")
+
+[node name="cannon1" parent="." instance=ExtResource("2_heaki")]

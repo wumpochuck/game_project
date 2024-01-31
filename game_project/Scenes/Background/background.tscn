@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c743nwkxutise"]
+
+[ext_resource type="Texture2D" uid="uid://cto8k1kvcx14a" path="res://Assets/BGleft.png" id="1_y5cwm"]
+[ext_resource type="Texture2D" uid="uid://k3d2qd58ocbr" path="res://Assets/BGright.png" id="2_h3hff"]
+
+[node name="background" type="Node2D"]
+
+[node name="leftimage" type="Sprite2D" parent="."]
+texture = ExtResource("1_y5cwm")
+centered = false
+
+[node name="rightimage" type="Sprite2D" parent="."]
+texture = ExtResource("2_h3hff")
+centered = false
+offset = Vector2(640, 0)
