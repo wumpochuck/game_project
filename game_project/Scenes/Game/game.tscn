@@ -8,4 +8,4 @@
 [node name="background" parent="." instance=ExtResource("1_a5t60")]
 
 [node name="cannon_room" parent="." instance=ExtResource("2_py5js")]
-position = Vector2(86, 631)
+position = Vector2(157, 565)
