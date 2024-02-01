@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var x_speed = 300
+var x_speed = 1500
 var y_speed = -1000
 
 var gravity = 10 # Значение гравитации
