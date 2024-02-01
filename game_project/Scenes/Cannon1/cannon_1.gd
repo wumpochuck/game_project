@@ -7,6 +7,7 @@ extends Node2D
 #var limit_x = 640
 var bullet_scene : PackedScene = preload("res://Scenes/Bullet1/bullet_1.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,8 +26,15 @@ func shooting():
 '''
 
 func shooting():
-	add_child(bullet_scene.instantiate())
+	var target = get_local_mouse_position()
 	
-func _on_texture_button_pressed(): # Тест-функция для выстрелов
-	shooting()
-	pass # Replace with function body.
+	var bullet = bullet_scene.instantiate()
+	bullet.x_speed = target.x 
+	bullet.y_speed = target.y - 1080/2
+	
+	print(target, position)
+	add_child(bullet)
+	
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		shooting()

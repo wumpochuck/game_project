@@ -17,9 +17,11 @@ func _ready():
 func _process(delta = 30.0):
 	moving(flag)
 
-	#if Input.is_action_pressed("switch_camera"):
-	#	switch_camera(-flag)
-	#	flag = -flag
+	
+func _input(event):
+	if Input.is_action_pressed("switch_camera"):
+		switch_camera(-flag)
+		flag = -flag
 
 func moving(flag):
 	if flag == 1:
@@ -29,16 +31,16 @@ func moving(flag):
 		elif (camera_x > 450): # and (global_camera_x <= right_limit):
 			position.x += camera_speed * 10
 
-'''
-func switch_camera(flag): Писал чтобы не листать но чет хуйня получилась
+
+func switch_camera(flag): #Писал чтобы не листать но чет хуйня получилась
 	if flag == 1:
 		position = Vector2(640,360)
 		zoom = Vector2(1,1)
-		DisplayServer.window_set_size(Vector2(1280,720))
+		#DisplayServer.window_set_size(Vector2(1280,720))
 		pass
 	else:
 		position = Vector2(640,360)
-		zoom = Vector2(0.334,1)
-		DisplayServer.window_set_size(Vector2(3840,720))
+		zoom = Vector2(0.334,0.334)
+		#DisplayServer.window_set_size(Vector2(3840,720))
 		pass
-'''
+
