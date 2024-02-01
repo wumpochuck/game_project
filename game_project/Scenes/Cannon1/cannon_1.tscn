@@ -18,4 +18,7 @@ offset_right = -4.0
 offset_bottom = -10.0
 texture_normal = ExtResource("3_r1ops")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

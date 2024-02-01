@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Bullet1/bullet_1.gd" id="1_2j27u"]
 [ext_resource type="Texture2D" uid="uid://xwvxsy4w3y1b" path="res://Assets/Bullets/bullet1.png" id="2_hyh50"]
 
-[node name="bullet_1" type="Node2D"]
+[node name="bullet_1" type="RigidBody2D"]
 script = ExtResource("1_2j27u")
 
 [node name="image" type="Sprite2D" parent="."]

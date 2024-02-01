@@ -25,9 +25,9 @@ func moving(flag):
 	if flag == 1:
 		var camera_x = get_local_mouse_position()[0]
 		if (camera_x < -450): # and (global_camera_x >= left_limit):
-			position.x -= camera_speed
+			position.x -= camera_speed * 10
 		elif (camera_x > 450): # and (global_camera_x <= right_limit):
-			position.x += camera_speed
+			position.x += camera_speed * 10
 
 '''
 func switch_camera(flag): Писал чтобы не листать но чет хуйня получилась
