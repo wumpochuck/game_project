@@ -38,3 +38,9 @@ func shooting():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		shooting()
+
+'''
+func _on_texture_button_pressed():
+	shooting()
+	pass # Replace with function body.
+'''
