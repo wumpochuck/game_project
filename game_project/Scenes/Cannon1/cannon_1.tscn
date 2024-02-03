@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyiw07lb3av6y"]
+[gd_scene load_steps=3 format=3 uid="uid://dyiw07lb3av6y"]
 
 [ext_resource type="Script" path="res://Scenes/Cannon1/cannon_1.gd" id="1_504en"]
 [ext_resource type="Texture2D" uid="uid://bxtn1ipf4oor8" path="res://Assets/cannon1.png" id="2_re8m5"]
-[ext_resource type="Texture2D" uid="uid://xwvxsy4w3y1b" path="res://Assets/Bullets/bullet1.png" id="3_r1ops"]
 
 [node name="cannon1" type="Node2D"]
 script = ExtResource("1_504en")
@@ -11,15 +10,6 @@ script = ExtResource("1_504en")
 position = Vector2(0, -16)
 texture = ExtResource("2_re8m5")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = -36.0
-offset_top = -26.0
-offset_right = -4.0
-offset_bottom = -10.0
-texture_normal = ExtResource("3_r1ops")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
 zoom = Vector2(0.6, 0.6)
-
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

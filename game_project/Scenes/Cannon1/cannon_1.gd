@@ -29,10 +29,17 @@ func shooting():
 	var target = get_local_mouse_position()
 	
 	var bullet = bullet_scene.instantiate()
+	bullet.get_node("Hitbox").damage = 10 # Ставлю урон выстрела
 	bullet.x_speed = target.x 
 	bullet.y_speed = target.y - 1080/2
 	
-	print(target, position)
+	
+	#bullet.position.x += 50 # Чтобы хитбокс пульки не задевал hurtbox
+	#bullet.position.y -= 50 
+	''' 2 строки выше конфликтуют с y_speed 
+		можно исправить есть поместить форты на раных уровнях '''
+	#print(target, position)
+	
 	add_child(bullet)
 	
 func _input(event):

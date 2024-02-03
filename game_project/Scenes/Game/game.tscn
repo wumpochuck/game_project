@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx4i8lhawjpdb"]
+[gd_scene load_steps=6 format=3 uid="uid://bx4i8lhawjpdb"]
 
 [ext_resource type="PackedScene" uid="uid://c743nwkxutise" path="res://Scenes/Background/background.tscn" id="1_a5t60"]
+[ext_resource type="Script" path="res://Scenes/Game/game.gd" id="1_yy6sd"]
 [ext_resource type="PackedScene" uid="uid://bonm7ikbwwv0e" path="res://Scenes/cannon_room/cannon_room.tscn" id="2_py5js"]
 [ext_resource type="Script" path="res://Scenes/Game/player_camera.gd" id="3_krfx7"]
 [ext_resource type="Texture2D" uid="uid://xwvxsy4w3y1b" path="res://Assets/Bullets/bullet1.png" id="4_wh12j"]
@@ -8,11 +9,24 @@
 [node name="game" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_yy6sd")
 
 [node name="background" parent="." instance=ExtResource("1_a5t60")]
 
-[node name="cannon_room" parent="." instance=ExtResource("2_py5js")]
-position = Vector2(-1181, 630)
+[node name="cannon_roomleft" parent="." instance=ExtResource("2_py5js")]
+position = Vector2(-1068, 555)
+
+[node name="Hurtbox" parent="cannon_roomleft" index="2"]
+light_mask = 1
+
+[node name="cannon_roomright" parent="." instance=ExtResource("2_py5js")]
+position = Vector2(2296, 515)
+
+[node name="cannon1" parent="cannon_roomright" index="1"]
+process_mode = 4
+
+[node name="Hurtbox" parent="cannon_roomright" index="2"]
+light_mask = 2
 
 [node name="player_camera" type="Camera2D" parent="."]
 position = Vector2(640, 360)
@@ -29,3 +43,17 @@ script = ExtResource("3_krfx7")
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("4_wh12j")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+visibility_layer = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-1280, -4157, -1280, 720, 2560, 720, 2560, -4083, -1278, -4152, 2747, -4169, 2715, 860, -1428, 828, -1481, -4169)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+
+[editable path="cannon_roomleft"]
+[editable path="cannon_roomleft/Hurtbox"]
+[editable path="cannon_roomright"]
+[editable path="cannon_roomright/Hurtbox"]
