@@ -13,3 +13,4 @@ func _ready():
 
 func _integrate_forces(state):
 	$image.rotation = linear_velocity.angle() # Обновляем поворот спрайта в соответствии с изменением скорости
+

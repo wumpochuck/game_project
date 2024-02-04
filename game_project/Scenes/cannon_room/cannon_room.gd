@@ -19,6 +19,10 @@ func _on_hurtbox_area_entered(hitbox):
 	print("Урон: " + str(damage) + ", Здоровье: " + str(hp))
 
 func _physics_process(delta):
-	velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * 1000
-	move_and_slide()
+	if is_multiplayer_authority():
+		velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down") * 1000
+		move_and_slide()
 	
+	
+func _enter_tree():
+	set_multiplayer_authority(name.to_int())

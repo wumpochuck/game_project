@@ -26,11 +26,12 @@ func shooting():
 		add_child(bullet)
 	
 func _input(event):
-	if (event.is_action_pressed("ui_accept") and is_multiplayer_authority()):
-		target = get_local_mouse_position()
-		$scope.visible = true
-		$scope.position = target
-		#shooting()
+	if is_multiplayer_authority():
+		if event.is_action_pressed("ui_accept"):
+			target = get_local_mouse_position()
+			$scope.visible = true
+			$scope.position = target
+			#shooting()
 
 func _on_reload_timeout():
 	shooting()
